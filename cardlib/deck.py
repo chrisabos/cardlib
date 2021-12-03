@@ -9,11 +9,8 @@ class Deck():
     def reset(self, do_shuffle=True):
         self.cards = []
 
-        ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
-        suites = ['S', 'H', 'C', 'D']
-
-        for s in suites:
-            for r in ranks:
+        for s in Suit:
+            for r in Rank:
                 new_card = Card(r, s)
                 self.cards.append(new_card)
 
@@ -32,3 +29,7 @@ class Deck():
             return None
 
         return self.cards.pop(0)
+
+    # returns the number of cards in the deck
+    def size(self):
+        return len(self.cards)
